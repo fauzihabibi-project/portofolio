@@ -283,6 +283,114 @@
       50% { transform: translateY(-20px); }
     }
 
+    /* Mini Projects Section */
+    .mini-projects-section {
+      padding: 4rem 0;
+      background: var(--secondary-bg);
+    }
+    
+    .mini-projects-toggle {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+      margin-bottom: 1.5rem;
+    }
+    
+    .mini-projects-toggle:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    
+    .mini-projects-toggle h3 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+    }
+    
+    .mini-projects-toggle i {
+      transition: transform 0.3s ease;
+    }
+    
+    .mini-projects-toggle.active i {
+      transform: rotate(180deg);
+    }
+    
+    .mini-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    
+    .mini-projects-grid.active {
+      max-height: 2000px;
+      opacity: 1;
+    }
+    
+    .mini-project-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: var(--transition);
+    }
+    
+    .mini-project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow);
+    }
+    
+    .mini-project-card h4 {
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    
+    .mini-project-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    
+    .mini-project-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .mini-project-card .tags span {
+      background: rgba(107, 114, 128, 0.2);
+      color: var(--accent-gray-light);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+    
+    .mini-project-card .links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .mini-project-card .links a {
+      color: var(--accent-gray-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    
+    .mini-project-card .links a:hover {
+      color: var(--text-primary);
+    }
+
     /* Responsive design */
     @media (max-width: 768px) {
       .hero-content h1 {
@@ -295,6 +403,10 @@
       
       .section-title {
         font-size: 2rem;
+      }
+      
+      .mini-projects-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -312,8 +424,8 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#about">HOME</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">PROJECT</a></li>
+        <li class="nav-item"><a class="nav-link" href="#mini-projects">MINI PROJECT</a></li>
         <li class="nav-item"><a class="nav-link" href="#services">SERVICES</a></li>
-        <!-- <li class="nav-item"><a class="nav-link" href="#experience">EXPERIENCE</a></li> -->
       </ul>
     </div>
   </div>
@@ -341,7 +453,7 @@
         </div>
       </div>
       <div class="col-lg-6 text-center">
-        <img src="img/user1.png" 
+        <img src="https://placehold.co/400x400/6b7280/ffffff?text=FH" 
              alt="Profile" class="profile-image mb-4">
       </div>
     </div>
@@ -352,12 +464,11 @@
 <section id="projects" class="portfolio-section">
   <div class="container">
     <h2 class="section-title">My Project</h2>
-    </div>
 
     <div class="row g-4">
       <div class="col-md-4">
         <div class="project-card">
-          <img src="img/p2.png" 
+          <img src="https://placehold.co/600x400/6b7280/ffffff?text=Landing+Page" 
                alt="Project 1" class="project-image">
           <div class="project-content">
             <h5 class="project-title">Landing Page</h5>
@@ -373,7 +484,7 @@
       </div>
       <div class="col-md-4">
         <div class="project-card">
-          <img src="img/p1.png" 
+          <img src="https://placehold.co/600x400/6b7280/ffffff?text=Website+Tailwind" 
                alt="Project 2" class="project-image">
           <div class="project-content">
             <h5 class="project-title">Website Tailwindcss</h5>
@@ -389,7 +500,7 @@
       </div>
       <div class="col-md-4">
         <div class="project-card">
-          <img src="img/p3.png" 
+          <img src="https://placehold.co/600x400/6b7280/ffffff?text=E-learning" 
                alt="Project 3" class="project-image">
           <div class="project-content">
             <h5 class="project-title">E-learning</h5>
@@ -397,7 +508,7 @@
             <div class="d-flex justify-content-between align-items-center">
               <span class="badge bg-secondary">coming soon</span>
               <div class="mt-4">
-<!--                 <a href="#" class="btn-primary-custom me-2">Demo</a> -->
+                <!-- <a href="#" class="btn-primary-custom me-2">Demo</a> -->
               </div>
             </div>
           </div>
@@ -405,7 +516,7 @@
       </div>
       <div class="col-md-4">
         <div class="project-card">
-          <img src="img/p4.png" 
+          <img src="https://placehold.co/600x400/6b7280/ffffff?text=E-commerce" 
                alt="Project 4" class="project-image">
           <div class="project-content">
             <h5 class="project-title">E-commmerce</h5>
@@ -417,6 +528,69 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mini Projects Section -->
+<section id="mini-projects" class="mini-projects-section">
+  <div class="container">
+    <h2 class="section-title">Mini Projects</h2>
+    
+    <div class="mini-projects-toggle" id="miniProjectsToggle">
+      <h3>
+        Show Mini Projects
+        <i class="fas fa-chevron-down"></i>
+      </h3>
+    </div>
+    
+    <div class="mini-projects-grid" id="miniProjectsGrid">
+      <!-- Mini Project 1 -->
+      <div class="mini-project-card">
+        <h4>Biodata</h4>
+        <p>UI.</p>
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Bootstrap</span>
+        </div>
+        <div class="links">
+          <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="#"><i class="fab fa-github"></i> Source Code</a>
+        </div>
+      </div>
+      
+      <!-- Mini Project 2 -->
+      <div class="mini-project-card">
+        <h4>Gallery</h4>
+        <p>Gallery photo.</p>
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Tailwindcss</span>
+        </div>
+        <div class="links">
+          <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="#"><i class="fab fa-github"></i> Source Code</a>
+        </div>
+      </div>
+      
+      <!-- Mini Project 3 -->
+      <div class="mini-project-card">
+        <h4>Card Biodata</h4>
+        <p>Card biodata user.</p>
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+        <div class="links">
+          <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="#"><i class="fab fa-github"></i> Source Code</a>
         </div>
       </div>
     </div>
@@ -536,6 +710,23 @@
         link.classList.add('active');
       }
     });
+  });
+
+  // Mini Projects Toggle
+  const miniProjectsToggle = document.getElementById('miniProjectsToggle');
+  const miniProjectsGrid = document.getElementById('miniProjectsGrid');
+  
+  miniProjectsToggle.addEventListener('click', () => {
+    miniProjectsToggle.classList.toggle('active');
+    miniProjectsGrid.classList.toggle('active');
+    
+    // Update text based on state
+    const title = miniProjectsToggle.querySelector('h3');
+    if (miniProjectsGrid.classList.contains('active')) {
+      title.innerHTML = 'Hide Mini Projects <i class="fas fa-chevron-down"></i>';
+    } else {
+      title.innerHTML = 'Show Mini Projects <i class="fas fa-chevron-down"></i>';
+    }
   });
 </script>
 
