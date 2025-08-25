@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Project | Profile</title>
+  <link href="bootstrap-install/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url("img/bg.jpg") no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      color: white;
+      padding: 20px;
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border: 3px solid #fff;
+    }
+    .btn-glass {
+      background: rgba(24, 23, 23, 0.8);
+      color: #fff;
+      border-radius: 25px;
+      padding: 8px 16px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      border: none;
+    }
+    .btn-glass:hover {
+      background: rgb(12, 12, 12);
+      color: #fff;
+    }
+    .btn-glass-danger {
+      background: rgba(243, 57, 57, 0.8);
+      color: #fff;
+      border-radius: 25px;
+      padding: 8px 16px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      border: none;
+    }
+    .btn-glass-danger:hover {
+      background: rgb(243, 57, 57);
+      color: #fff;
+    }
+    .social-icons {
+      margin-top: 15px;
+    }
+    .social-icons a {
+      color: white;
+      margin: 0 8px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      color: #121213;
+    }
+
+    /* === Biodata rapi dengan titik dua sejajar === */
+    .biodata {
+      display: grid;
+      grid-template-columns: 180px auto;
+      row-gap: 8px;
+    }
+    .biodata-title {
+      font-weight: bold;
+      position: relative;
+    }
+    .biodata-value {
+      position: relative;
+    }
+    .biodata-value::before {
+      content: ":";
+      position: absolute;
+      left: -15px; /* geser titik dua biar sejajar */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row g-4">
+    <!-- Card Kiri -->
+    <div class="col-md-4">
+      <div class="glass-card text-center">
+        <img src="img/user1.png" class="rounded-circle profile-img mb-3" alt="Profile Picture">
+        <h5 class="card-title">Muhammad Fauzi Habibi</h5>
+        <h6 class="mt-2">TRPL-D | POLITEKNIK IDN</h6>
+
+        <!-- Tombol Modal -->
+        <button type="button" class="btn-glass" data-bs-toggle="modal" data-bs-target="#waModal">
+          <i class="fab fa-whatsapp me-2"></i> Hubungi Saya
+        </button>
+
+        <div class="social-icons">
+          <a href="https://www.instagram.com/fauzihabibi_/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/muhammad-fauzi-habibi-200793371/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/muhammadfauzihabibi" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Kanan -->
+    <div class="col-md-8">
+      <div class="glass-card">
+        <div class="biodata">
+          <div class="biodata-title">Nama Lengkap</div><div class="biodata-value">Muhammad Fauzi Habibi</div>
+          <div class="biodata-title">Alamat</div><div class="biodata-value">Sukanergara, kab. Jonggol, Jawa Barat</div>
+          <div class="biodata-title">Asal</div><div class="biodata-value">Muara Labuh, Solok Selatan, Sumatera Barat</div>
+          <div class="biodata-title">Email</div><div class="biodata-value">habibi.muhammad.fauzi@gmail.com</div>
+          <div class="biodata-title">Tanggal Lahir</div><div class="biodata-value">21 November 2006</div>
+          <div class="biodata-title">Tempat Lahir</div><div class="biodata-value">Muara Labuh, Solok Selatan, Sumatera Barat</div>
+          <div class="biodata-title">Kewarganegaraan</div><div class="biodata-value">Indonesia Raya</div>
+          <div class="biodata-title">Jenis Kelamin</div><div class="biodata-value">Laki-laki</div>
+          <div class="biodata-title">Agama</div><div class="biodata-value">Islam</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal WhatsApp -->
+  <div class="modal fade" id="waModal" tabindex="-1" aria-labelledby="waModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-card">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="waModalLabel">Kirim Pesan via WhatsApp</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="waForm">
+            <div class="mb-3">
+              <label for="sender-name" class="col-form-label">Nama Anda:</label>
+              <input type="text" class="form-control bg-black text-white" id="sender-name" required>
+            </div>
+            <div class="mb-3">
+              <label for="message-text" class="col-form-label">Pesan:</label>
+              <textarea class="form-control bg-black text-white" id="message-text" required></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-glass-danger" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn btn-glass" id="sendWaBtn">Kirim ke WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  document.getElementById('sendWaBtn').addEventListener('click', function () {
+    const name = document.getElementById('sender-name').value.trim();
+    const message = document.getElementById('message-text').value.trim();
+
+    if (name && message) {
+      // Nomor tujuan WhatsApp
+      const phoneNumber = "6282233021251";
+      const text = `Asslamualaikum fauzi, nama saya ${name}.%0A${message}`;
+      const url = `https://wa.me/${phoneNumber}?text=${text}`;
+      
+      // Buka WhatsApp dengan pesan
+      window.open(url, "_blank");
+
+      // Tutup modal
+      const modalEl = document.getElementById('waModal');
+      const modal = bootstrap.Modal.getInstance(modalEl);
+      modal.hide();
+    } else {
+      alert("Harap isi nama dan pesan sebelum mengirim.");
+    }
+  });
+</script>
+
+<script src="bootstrap-install/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
